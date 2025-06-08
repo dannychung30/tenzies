@@ -10,8 +10,14 @@ export default function App() {
         for (let i = 0; i < 10; i++) {
             newDice.push(Math.floor((Math.random() * 6) + 1));
         }
-    
+
         return newDice
+    }
+
+    function handleRollDice() {
+        setDice( () => {
+            return generateAllNewDice();
+        });
     }
 
     const randomDice = dice.map( number => {
@@ -24,6 +30,8 @@ export default function App() {
                 <div className="dice">
                     {randomDice}
                 </div>
+
+                <button className="roll-dice" onClick={handleRollDice}>Roll</button>
             </div>
         </main>
     )
