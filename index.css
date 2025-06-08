@@ -23,6 +23,10 @@ main {
     align-items: center;
 }
 
+button {
+    font-family: inherit;
+}
+
 .game {
     background-color: #e8e8e8;
     width: 100%;
@@ -31,8 +35,10 @@ main {
     max-height: 400px;
     border-radius: 10px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 1em;
 }
 
 .dice {
@@ -51,4 +57,17 @@ main {
     background-color: #f4f4f4;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
     cursor: pointer;
+}
+
+.roll-dice {
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 0.6em 1.5em;
+    margin: 2.5em 0 0 0;
+    font-size: 1.25em;
+    color: #FFF;
+    font-weight: 700;
+    border: none;
+    background-color: #2467fb;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
 }
