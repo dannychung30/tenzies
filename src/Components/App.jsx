@@ -55,6 +55,10 @@ export default function App() {
     return (
         <main>
             <div className="game">
+                <section className="game-intro">
+                    <h1>Tenzies</h1>
+                    <p>Roll until all dice are the same number. Click each die to hold it at its current number between rolls.</p>
+                </section>
                 <div className="dice">
                     {randomDice}
                 </div>
