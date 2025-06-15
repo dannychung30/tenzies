@@ -59,6 +59,10 @@ button {
     cursor: pointer;
 }
 
+.die.held {
+    background-color: #59E391;
+}
+
 .roll-dice {
     cursor: pointer;
     border-radius: 5px;
