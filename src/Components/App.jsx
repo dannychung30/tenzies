@@ -14,7 +14,7 @@ export default function App() {
                 { 
                     id: nanoid(),
                     value: randNum,
-                    isHeld: true
+                    isHeld: false
                 } 
             );
         }
@@ -28,8 +28,23 @@ export default function App() {
         });
     }
 
+    function hold(id) {
+        setDice( prevDice => {
+            return (
+                prevDice.map( die => {
+                    return die.id === id ? {...die, isHeld: !die.isHeld} : {...die}
+                })
+            )
+        })
+    }
+
     const randomDice = dice.map( die => {
-        return <Die key={die.id} value={die.value} isHeld={die.isHeld} />
+        return <Die 
+                    key={die.id}
+                    value={die.value}
+                    isHeld={die.isHeld}
+                    holdFunction={() => { hold(die.id) }}
+               />
     })
 
     return (
