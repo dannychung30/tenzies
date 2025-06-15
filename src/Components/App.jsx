@@ -19,7 +19,7 @@ export default function App() {
             newDice.push(
                 { 
                     id: nanoid(),
-                    value: 5,
+                    value: randNum,
                     isHeld: false
                 } 
             );
