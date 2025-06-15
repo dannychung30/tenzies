@@ -4,7 +4,10 @@ import { nanoid } from "nanoid"
 
 export default function App() {
     const [dice, setDice] = useState(generateAllNewDice());
-
+    const gameWon = dice.every( die => {
+        return (die.value === dice[0].value && die.isHeld)
+    });
+    
     function generateAllNewDice() {
         const newDice = [];
         const numOfDice = 10;
@@ -62,7 +65,9 @@ export default function App() {
                 <div className="dice">
                     {randomDice}
                 </div>
-                <button className="roll-dice" onClick={handleRollDice}>Roll</button>
+                <button className="roll-dice" onClick={handleRollDice}>
+                    {gameWon ? "New Game" : "Roll"}
+                </button>
             </div>
         </main>
     )
