@@ -7,8 +7,9 @@ export default function App() {
 
     function generateAllNewDice() {
         const newDice = [];
+        const numOfDice = 10;
     
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < numOfDice; i++) {
             const randNum = Math.floor((Math.random() * 6) + 1);
             newDice.push(
                 { 
@@ -23,9 +24,13 @@ export default function App() {
     }
 
     function handleRollDice() {
-        setDice( () => {
-            return generateAllNewDice();
-        });
+        setDice( prevDice => {
+            return (
+                prevDice.map( die => {
+                    return die.isHeld === false ? {...die, value: Math.floor((Math.random() * 6) + 1)} : {...die}
+                })
+            )
+        })
     }
 
     function hold(id) {
@@ -53,7 +58,6 @@ export default function App() {
                 <div className="dice">
                     {randomDice}
                 </div>
-
                 <button className="roll-dice" onClick={handleRollDice}>Roll</button>
             </div>
         </main>
