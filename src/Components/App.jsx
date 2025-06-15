@@ -14,7 +14,7 @@ export default function App() {
                 { 
                     id: nanoid(),
                     value: randNum,
-                    isHeld: false 
+                    isHeld: true
                 } 
             );
         }
@@ -29,7 +29,7 @@ export default function App() {
     }
 
     const randomDice = dice.map( die => {
-        return <Die key={die.id} value={die.value} />
+        return <Die key={die.id} value={die.value} isHeld={die.isHeld} />
     })
 
     return (
