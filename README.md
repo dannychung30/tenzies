@@ -1,1 +1,1 @@
-# Tenzies
+# Tenzi Game
