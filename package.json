@@ -2,7 +2,7 @@
   "name": "tenzies-game",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://dannychung30.github.io/tenzi",
+  "homepage": "https://dannychung30.github.io/tenzies",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
