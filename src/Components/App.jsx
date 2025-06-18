@@ -82,7 +82,7 @@ export default function App() {
             }
             <div className="game">
                 <section className="game-intro">
-                    <h1>Tenzies</h1>
+                    <h1>Tenzi Game</h1>
                     <p>Roll until all dice are the same number. Click each die to hold it at its current number between rolls.</p>
                 </section>
                 <div className="dice">
