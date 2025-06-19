@@ -1,10 +1,12 @@
 import Die from "./Die"
+import RollCounter from "./RollCounter"
 import { useState, useEffect, useRef } from "react"
 import { nanoid } from "nanoid"
 import Confetti from "react-confetti"
 
 export default function App() {
     const [dice, setDice] = useState(() => { return generateAllNewDice() });
+    const [rollCount, setRollCount] = useState(0);
     const gameBtnRef = useRef(null);
     const gameWon = dice.every( die => {
         return (die.value === dice[0].value && die.isHeld)
@@ -29,6 +31,8 @@ export default function App() {
     }
 
     function handleRollDice() {
+        incrementCounter();
+
         setDice( prevDice => {
             return (
                 prevDice.map( die => {
@@ -48,10 +52,18 @@ export default function App() {
         })
     }
 
+    function incrementCounter() {
+        setRollCount( prevRollCount => {
+            return prevRollCount + 1
+        });
+    }
+
     function handleNewGame() {
         setDice( () => {
             return generateAllNewDice();
         });
+
+        setRollCount(0);
     }
 
     useEffect( () => {
@@ -85,6 +97,9 @@ export default function App() {
                     <h1>Tenzi Game</h1>
                     <p>Roll until all dice are the same number. Click each die to hold it at its current number between rolls.</p>
                 </section>
+                <div className="extras">
+                    <RollCounter count={rollCount} />
+                </div>
                 <div className="dice">
                     {randomDice}
                 </div>
