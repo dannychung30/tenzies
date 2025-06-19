@@ -1,3 +1,5 @@
+/******* GLOBAL *******/
+
 * {
     box-sizing: border-box;
 }
@@ -36,8 +38,10 @@ button {
     font-family: inherit;
 }
 
+/******* MAIN GAME *******/
+
 .game-intro {
-    padding: 0 0 2em 0;
+    padding: 0 0 1em 0;
     text-align: center;
 }
 
@@ -52,6 +56,10 @@ button {
     align-items: center;
     padding: 3em;
     z-index: 2;
+}
+
+.extras {
+    padding: 0 0 2em 0;
 }
 
 .dice {
