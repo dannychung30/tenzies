@@ -3,4 +3,4 @@
 
 [Demo of Tenzi Game](https://www.dannychung.net/tenzies/)
 
-![Tenzie Game Screenshot](./public/tenzi-game-screenshot.jpeg)
+![Tenzie Game Screenshot](./public/game-screenshot.jpeg)
